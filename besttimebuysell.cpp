@@ -1,19 +1,21 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int arr[]={7,1,5,3,6,4};
-    int n=sizeof(arr)/sizeof(arr[0]);
-     
-    int currentprice=INT8_MAX;
-    int profit=0;
-    for(int i=0;i<n;i++){
-        if(arr[i]<currentprice){
-            currentprice=arr[i];
+   
+    int arr[]={23, 56, 89, 90 };
+     int n=sizeof(arr)/sizeof(arr[1]);
+
+    for(int i=0;i<=n-1;i++){
+        for(int j=0;j<=n-1;j++){
+            if(arr[j]>arr[j+1]){
+                int temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+           
         }
-        else if(arr[i]-currentprice>profit){
-            profit=arr[i]-currentprice;
-        }
+         cout<<arr[i]<<" ";
+       
     }
-    cout<<profit<<" ";
 
 }
