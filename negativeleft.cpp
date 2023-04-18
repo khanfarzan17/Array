@@ -2,30 +2,28 @@
 using namespace std;
 void sort(int arr[],int n){
     sort(arr,arr+n);
-}
 
+}
 void rearrange(int arr[],int n){
     int j=0;
     for(int i=0;i<n;i++){
-        if(arr[i]<0){
-            if(i!=j){
-                swap(arr[i],arr[j]);
-                j++;
-            }
+        if(i!=j && arr[i]<0){
+            swap(arr[i],arr[j]);
+            j++;
         }
     }
 }
-void displayall(int arr[],int n){
+void display(int arr[],int n){
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
-    }cout<<endl;
+    }
 }
-int main(){
 
-    int arr[]={-1,-2,33,45,-3,-5,-6,0};
+int main(){
+    int arr[]={0,-1,2,4,5,-2,-6,-7};
     int n=sizeof(arr)/sizeof(arr[0]);
-    rearrange(arr,n);
-    displayall(arr,n);
     sort(arr,arr+n);
+    rearrange(arr,n);
+    display(arr,n);
     return 0;
 }
